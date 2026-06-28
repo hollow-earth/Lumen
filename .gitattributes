@@ -1,1 +1,3 @@
-external/** linguist-vendored
+external/include/glad/** linguist-vendored
+external/include/KHR/** linguist-vendored
+external/src/gl.c linguist-vendored
