@@ -1,19 +1,22 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.25)
+project(Lumen_Game_Engine
+    VERSION 0.1.0
+    LANGUAGES C CXX
+)
 
-project(Lumen LANGUAGES C CXX)
+# Turn GLAD into its own library
+add_library(glad external/src/gl.c)
+target_include_directories(glad PUBLIC external/include)
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 23)
+# GLFW is already its own library
+add_subdirectory(external/glfw)
 
 add_executable(Lumen
     src/main.cpp
-    external/src/gl.c
 )
 
-target_include_directories(Lumen PRIVATE
-    external/include
+# Grab the necessary dependencies and link libraries
+target_link_libraries(Lumen 
+    PRIVATE glad glfw
 )
 
-add_subdirectory(external/glfw)
-
-target_link_libraries(Lumen PRIVATE glfw)
