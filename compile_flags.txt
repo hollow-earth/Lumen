@@ -1,0 +1,2 @@
+-Iexternal/include
+-Iexternal/glfw/include
