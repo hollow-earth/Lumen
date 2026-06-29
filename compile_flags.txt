@@ -1,2 +1,2 @@
--Iexternal/include
+-Iexternal/glad/include
 -Iexternal/glfw/include

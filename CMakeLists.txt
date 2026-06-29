@@ -5,8 +5,8 @@ project(Lumen_Game_Engine
 )
 
 # Turn GLAD into its own library
-add_library(glad external/src/gl.c)
-target_include_directories(glad PUBLIC external/include)
+add_library(glad external/glad/src/gl.c)
+target_include_directories(glad PUBLIC external/glad/include)
 
 # GLFW is already its own library
 add_subdirectory(external/glfw)
